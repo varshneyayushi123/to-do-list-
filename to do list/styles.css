@@ -1,0 +1,174 @@
+body {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    font-family: 'Montserrat', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.5s;
+}
+.todo-container {
+    background: #fff;
+    padding: 2.5rem 2rem 2rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    width: 370px;
+    position: relative;
+    animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+h1 {
+    text-align: center;
+    color: #ff6f91;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+#todo-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+#todo-input, #todo-time {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 1.5px solid #ffb6b9;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    background: #fff0f6;
+}
+#todo-input:focus, #todo-time:focus {
+    border: 1.5px solid #ff6f91;
+    box-shadow: 0 0 0 2px #ffb6b9;
+}
+button[type="submit"] {
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(90deg, #ff6f91 0%, #ffb6b9 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(255,111,145,0.08);
+    transition: background 0.2s, transform 0.1s;
+}
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #ffb6b9 0%, #ff6f91 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 0.5rem;
+    border-bottom: 1px solid #ffe0e6;
+    font-size: 1.05rem;
+    background: rgba(255,255,255,0.7);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    animation: fadeInTask 0.5s;
+    transition: background 0.2s, text-decoration 0.2s, color 0.2s;
+}
+@keyframes fadeInTask {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+#todo-list li.completed {
+    text-decoration: line-through;
+    color: #aaa;
+    background: #e0e0e0;
+}
+#todo-list li .checkmark {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid #ff6f91;
+    margin-right: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    cursor: pointer;
+    transition: background 0.2s, border 0.2s;
+}
+#todo-list li.completed .checkmark {
+    background: #ffb6b9;
+    border-color: #ffb6b9;
+}
+#todo-list li .checkmark svg {
+    display: none;
+}
+#todo-list li.completed .checkmark svg {
+    display: block;
+}
+.delete-btn {
+    background: #fff0f6;
+    color: #ff6f91;
+    border: 1px solid #ffb6b9;
+    border-radius: 4px;
+    padding: 0.25rem 0.7rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.delete-btn:hover {
+    background: #ffb6b9;
+    color: #fff;
+    border: 1px solid #ff6f91;
+}
+footer {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+.todo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+}
+.footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #aaa;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+.progress-circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.progress-circle {
+    transform: rotate(-90deg);
+    margin-bottom: 0.3rem;
+}
+.progress-bg {
+    stroke: #ffe0e6;
+}
+.progress-bar {
+    stroke: #ff6f91;
+    transition: stroke-dasharray 0.4s;
+}
+.progress-text {
+    font-size: 1.1rem;
+    color: #ff6f91;
+    font-weight: 600;
+    margin-top: -0.2rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+} 
